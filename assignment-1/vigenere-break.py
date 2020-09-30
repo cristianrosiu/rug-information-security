@@ -90,4 +90,3 @@ if __name__ == '__main__':
 
     breaker = VigenereBreaker(text, lower_bound, upper_bound)
     breaker.break_cipher()
-
