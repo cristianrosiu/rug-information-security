@@ -72,17 +72,18 @@ def input_data():
     return binary_data
 
 
-# Read the desired process (i.e. either 'e' - encryption or 'd' - decryption)
-process = input()
+if __name__ == '__main__':
+    # Read the desired process (i.e. either 'e' - encryption or 'd' - decryption)
+    process = input()
 
-if process == 'e':
-    # Read the public key
-    public_key = [int(x) for x in input().split()]
-    data = input_data()
-    encrypt(public_key, data)
-elif process == 'd':
-    # Read m and n together with the super-increasing knapsack
-    m, n = [int(x) for x in input().split()]
-    super_knapsack = [int(x) for x in input().split()]
-    data = input_data()
-    decrypt(m, n, super_knapsack[::-1], data)
+    if process == 'e':
+        # Read the public key
+        public_key = [int(x) for x in input().split()]
+        data = input_data()
+        encrypt(public_key, data)
+    elif process == 'd':
+        # Read m and n together with the super-increasing knapsack
+        m, n = [int(x) for x in input().split()]
+        super_knapsack = [int(x) for x in input().split()]
+        data = input_data()
+        decrypt(m, n, super_knapsack[::-1], data)

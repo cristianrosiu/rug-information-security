@@ -44,9 +44,10 @@ def validate_knapsack(n, m, private, public):
     return 1
 
 
-# Read the input using the format described in assignment
-n, m = [int(x) for x in input().split()]
-private_key = [int(x) for x in input().split()]
-public_key = [int(x) for x in input().split()]
+if __name__ == '__main__':
+    # Read the input using the format described in assignment
+    n, m = [int(x) for x in input().split()]
+    private_key = [int(x) for x in input().split()]
+    public_key = [int(x) for x in input().split()]
 
-print(validate_knapsack(n, m, private_key, public_key))
+    print(validate_knapsack(n, m, private_key, public_key))
