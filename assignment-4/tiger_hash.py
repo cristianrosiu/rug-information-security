@@ -85,8 +85,6 @@ class Tiger:
         :return: 192bit Tiger hash as a string
         """
 
-        text = text.encode('UTF-8')
-
         a = 0x0123456789ABCDEF
         b = 0xFEDCBA9876543210
         c = 0xF096A5B4C3B2E187
@@ -112,4 +110,4 @@ class Tiger:
 
             a, b, c = a ^ a_prev, (b - b_prev) & mask, (c + c_prev) & mask
 
-        return (a.to_bytes(8, 'little')+b.to_bytes(8, 'little')+c.to_bytes(8, 'little')).hex()
+        return a.to_bytes(8, 'little')+b.to_bytes(8, 'little')+c.to_bytes(8, 'little')
